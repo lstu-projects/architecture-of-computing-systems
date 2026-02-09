@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сравнение комплектаций Audi A4</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 15px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .header p { font-size: 1.1em; opacity: 0.9; }
+        .table-wrapper { overflow-x: auto; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        th { background: #f8f9fa; font-weight: 600; color: #2c3e50; position: sticky; top: 0; z-index: 10; }
+        th:first-child { width: 200px; background: #2c3e50; color: white; }
+        tr:hover { background-color: #f5f7fa; }
+        .category-header { background: #3498db !important; color: white !important; font-size: 1.2em; font-weight: bold; }
+        .price-row { background: #e8f5e9 !important; font-weight: bold; font-size: 1.1em; }
+        .config-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white !important; font-size: 1.1em; text-align: center !important; }
+        .option-present { color: #27ae60; }
+        .option-absent { color: #e74c3c; }
+        .checkmark::before { content: '✓ '; font-weight: bold; }
+        .cross::before { content: '✗ '; font-weight: bold; }
+        .footer { background: #34495e; color: white; padding: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Сравнение комплектаций Audi A4</h1>
+            <p>Подробное сравнение опций и характеристик</p>
+        </div>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Категория / Опция</th>
+                        <th class="config-header">Базовая</th>
+                        <th class="config-header">S line</th>
+                        <th class="config-header">Premium Plus</th>
+                        <th class="config-header">Кастомная</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Модель</strong></td>
+                        <td>A4 35 TFSI</td>
+                        <td>A4 40 TFSI</td>
+                        <td>A4 45 TFSI quattro</td>
+                        <td>A4 35 TDI</td>
+                    </tr>
+                    <tr class="price-row">
+                        <td><strong>Базовая цена</strong></td>
+                        <td>€42 000,00</td>
+                        <td>€50 000,00</td>
+                        <td>€56 000,00</td>
+                        <td>€45 000,00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="category-header">ЭКСТЕРЬЕР</td>
+                    </tr>
+                    <tr>
+                        <td>Легкосплавные диски 17 дюймов</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Галогенные фары</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Решетка радиатора в цвет кузова</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Легкосплавные диски S line 19 дюймов</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Светодиодные фары Matrix LED</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Спортивный обвес S line</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Спортивная выхлопная система</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Черная отделка Black optic</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Легкосплавные диски Premium 18 дюймов</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Светодиодные фары HD Matrix LED с лазером</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Хромированная отделка радиатора</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Хромированные молдинги окон</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Панорамная стеклянная крыша</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Легкосплавные диски 18 дюймов</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                    </tr>
+                    <tr>
+                        <td>Светодиодные фары LED</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="category-header">ИНТЕРЬЕР</td>
+                    </tr>
+                    <tr>
+                        <td>Тканевая обивка сидений</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Сиденья с ручной регулировкой</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Стандартная приборная панель</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Спортивные сиденья S line с кожей/Alcantara</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Сиденья с электрорегулировкой и памятью</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Спортивный руль S line</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Алюминиевая отделка салона</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Декоративная подсветка контуров салона</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Кожаная обивка Valcona</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Комфортные сиденья с вентиляцией и массажем</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Деревянная отделка Fine Grain Ash</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Расширенная подсветка контуров Plus</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Премиальные коврики с отделкой</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Спортивные кожаные сиденья</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="category-header">КОМФОРТ</td>
+                    </tr>
+                    <tr>
+                        <td>Механический климат-контроль</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Электростеклоподъемники</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Круиз-контроль</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>3-зонный автоматический климат-контроль</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Подогрев передних сидений</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Электропривод крышки багажника</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Адаптивный круиз-контроль ACC</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                    </tr>
+                    <tr>
+                        <td>Audi Parking system plus</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>4-зонный автоматический климат-контроль</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Подогрев и вентиляция передних и задних сидений</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Функция массажа передних сидений</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Система доступа Audi Advanced Key</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Электрические шторки задних дверей и стекла</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Ароматизация салона</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="category-header">БЕЗОПАСНОСТЬ</td>
+                    </tr>
+                    <tr>
+                        <td>Система ABS</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>6 подушек безопасности</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Система стабилизации ESP</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Расширенная система подушек безопасности (8 шт.)</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Ассистент движения в полосе</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                    </tr>
+                    <tr>
+                        <td>Ассистент предотвращения столкновений</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Контроль слепых зон</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Система помощи при выезде задним ходом</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Расширенная система подушек безопасности (10 шт.)</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Audi Pre Sense 360°</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Активный ассистент полосы движения</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Адаптивный круиз-контроль с функцией пробок</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Камера кругового обзора 360°</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Проекционный дисплей на лобовое стекло</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="category-header">МУЛЬТИМЕДИА</td>
+                    </tr>
+                    <tr>
+                        <td>Дисплей MMI 7 дюймов</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Аудиосистема на 6 динамиков</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Bluetooth подключение</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Сенсорный дисплей MMI 10.1 дюйма</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Audi Virtual Cockpit Plus 12.3 дюйма</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Акустика Bang & Olufsen 3D (16 динамиков)</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Беспроводная зарядка Audi Phone Box</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Apple CarPlay и Android Auto</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Цифровая приборная панель Virtual Cockpit 12.3 дюйма</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Дисплей MMI Navigation plus 10.1 дюйма</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Audi Connect с 4G LTE</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Премиум акустика Bang & Olufsen 3D Advanced</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Управление жестами</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>WiFi точка доступа</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Премиум аудиосистема</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="category-header">ПРОИЗВОДИТЕЛЬНОСТЬ</td>
+                    </tr>
+                    <tr>
+                        <td>Двигатель 2.0 TFSI (150 л.с.)</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>7-ступенчатая автоматическая коробка S tronic</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Передний привод</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Двигатель 2.0 TFSI (190 л.с.)</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>7-ступенчатая S tronic</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Спортивная подвеска S line</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Прогрессивное рулевое управление</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Двигатель 2.0 TFSI (245 л.с.)</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Адаптивная пневмоподвеска</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Полный привод quattro ultra</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Динамическое рулевое управление</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                        <td class="option-absent cross">Нет</td>
+                    </tr>
+                    <tr>
+                        <td>Дизельный двигатель 2.0 TDI (163 л.с.)</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-absent cross">Нет</td>
+                        <td class="option-present checkmark">Да</td>
+                    </tr>
+                    <tr class="price-row">
+                        <td><strong>ИТОГОВАЯ ЦЕНА</strong></td>
+                        <td><strong>€42 000,00</strong></td>
+                        <td><strong>€78 950,00</strong></td>
+                        <td><strong>€97 400,00</strong></td>
+                        <td><strong>€54 550,00</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
